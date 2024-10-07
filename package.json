@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "tsc-watch --noClear --onsuccess \"node dist/server.js\""
+    "watch": "tsc-watch --noClear --onsuccess \"node dist/server.js\"",
+    "start": "nodemon --exec npm run watch"
   },
-  
+
   "nodemonConfig": {
     "ext": "js,handlebars,json",
     "ignore": ["dist/**", "node_modules/**"]
