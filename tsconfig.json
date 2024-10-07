@@ -1,0 +1,8 @@
+{
+    "extends": "@tsconfig/node20/tsconfig.json", // make sure to extend the correct tsconfig
+    "compilerOptions": {
+        "rootDir": "src/",
+        "outDir": "dist/"
+    },
+    "include" : ["src/**/*"] //** means "any number of nested subdirectories." , * means "any file"
+}
