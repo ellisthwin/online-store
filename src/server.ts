@@ -2,6 +2,7 @@ import { createServer } from "http";
 import express, { Express } from "express";
 import helmet from "helmet";
 import { getConfig } from "./config";
+import { createRoutes } from "./routes";
 const port = getConfig("http:port", 8000)
 
 // const port = 8000;
