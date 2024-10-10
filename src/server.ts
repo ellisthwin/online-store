@@ -4,6 +4,7 @@ import helmet from "helmet";
 import { getConfig } from "./config";
 import { createRoutes } from "./routes";
 import { createTemplates } from "./helpers";
+import { createErrorHandlers } from "./errors";
 const port = getConfig("http:port", 8000)
 
 // const port = 8000;
@@ -19,6 +20,7 @@ expressApp.use(express.static("node_modules/bootstrap/dist")); //serve static fi
 // })
 createTemplates(expressApp);
 createRoutes(expressApp);
+createErrorHandlers(expressApp);
 
 const server = createServer(expressApp);  //the Express application is passed to the createServer function, creating an HTTP server using the Express app as the request handler.
 server.listen(port, () => console.log(`HTPP Server listening on port ${port}`));
