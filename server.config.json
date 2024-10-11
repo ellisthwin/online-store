@@ -13,5 +13,15 @@
     "errors": {
         "400": "not_found",
         "500": "error"
+    },
+    "catalog": {
+        "400": "not_found",
+        "settings": {
+            "dialect": "sqlite",
+            "storage": "catalog.db"
+        },
+        "logging": true,
+        "reset_db": true,
+        "seed_file": "products.json"
     }
 }
