@@ -1,16 +1,21 @@
 import {Express} from "express";
+import { catalog_repository } from "../data";
 export const createCatalogRoutes = (app: Express) => 
 {
-    app.get("/", (req, resp) => {
-        //resp.send("Hello, SportsStore Route");
-        resp.render("index");
+    app.get("/", async (req, resp) => {
+        const products = await catalog_repository.getProducts();
+        resp.render("index", {products});
     })
+    // app.get("/", (req, resp) => {
+    //     //resp.send("Hello, SportsStore Route");
+    //     resp.render("index");
+    // })
 
-    app.get("/err", (req, resp) => {
-        throw new Error ("Something bad happened");
-    });
+    // app.get("/err", (req, resp) => {
+    //     throw new Error ("Something bad happened");
+    // });
 
-    app.get("/asyncerr", async (req, resp) => {
-        throw new Error ("Something bad happed a synchronously");
-    })
+    // app.get("/asyncerr", async (req, resp) => {
+    //     throw new Error ("Something bad happed a synchronously");
+    // })
 }
