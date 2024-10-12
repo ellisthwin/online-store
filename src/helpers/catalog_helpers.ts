@@ -24,3 +24,12 @@ export const pageButtons = (options: HelperOptions) => {
     }
     return output;
 }
+
+export const pageSizeOptions = (options:HelperOptions) => {
+    const { pageSize } = getData(options);
+    let output="";
+    [3,6,9].forEach(size => {
+        output += options.fn({ size, selected: pageSize === size ? "selected": ""})
+    })
+    return output;
+}
