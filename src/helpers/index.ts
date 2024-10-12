@@ -12,5 +12,5 @@ export const createTemplates = (app: Express) => {
     app.engine("handlebars", engine({                                //Combines all the helper functions from env_helpers and catalog_helpers to make them available in the Handlebars templates.
         ...config, helpers: { ...env_helpers, ...catalog_helpers }
     }));
-    app.set("view engine", "handlebars");   //
+    app.set("view engine", "handlebars");   //Sets Handlebars as the default view engine for the application.
 }
