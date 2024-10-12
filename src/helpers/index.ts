@@ -9,8 +9,8 @@ const config = getConfig("templates:config"); //other settings related to the Ha
 
 export const createTemplates = (app: Express) => {
     app.set("views", location);
-    app.engine("handlebars", engine({
+    app.engine("handlebars", engine({                                //Combines all the helper functions from env_helpers and catalog_helpers to make them available in the Handlebars templates.
         ...config, helpers: { ...env_helpers, ...catalog_helpers }
     }));
-    app.set("view engine", "handlebars");
+    app.set("view engine", "handlebars");   //
 }
