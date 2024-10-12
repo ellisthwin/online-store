@@ -1,9 +1,10 @@
 import { Sequelize } from "sequelize";
 import { getConfig } from "../../config";
 import { initializeModels, CategoryModel, ProductModel, SupplierModel} from "./models";
-import { readFileSync } from "fs";
+import { readFileSync } from "fs";  //Imports a method to read files synchronously from the filesystem.
 
-const config = getConfig("catalog:orm_repo");
+const config = getConfig("catalog:orm_repo");  //Retrieves configuration settings specific to the ORM repository by calling getConfigwith the key "catalog:orm_repo".
+// console.log("Config value:", config); // Check the value of `config` here
 const logging = config.logging? {logging: console.log, logQueryParameters: true} : { logging: false};
 
 export class BaseRepo {
