@@ -20,3 +20,13 @@ export interface Supplier{
     products?: Product[];
 
 }
+
+export interface ProductQueryParameters {
+    pageSize?: number;
+    page?: number;
+}
+
+export interface ProductQueryResult {
+    products: Product[];
+    totalCount: number;
+}
