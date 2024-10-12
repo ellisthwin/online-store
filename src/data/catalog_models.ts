@@ -1,17 +1,17 @@
 export interface Product {
-    id?: number;
+    id?: number;  // ? used for optional fields
     name: string;
     description: string;
     price: number;
 
-    category?: Category;
+    category?: Category;  // An optional property of type Category. Links the product to a category.
     supplier?: Supplier;
 }
 
 export interface Category {
     id?: number;
     name: string;
-    products?: Product[];
+    products?: Product[];  // Contains products belonging to the category.
 }
 
 export interface Supplier{
