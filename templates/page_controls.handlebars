@@ -1,0 +1,11 @@
+<div class="col">
+    {{#pageButtons }}
+        {{#if seleted}}
+            <button class="btn btn-sm btn-light active mr-1 p-2">
+                {{index}}
+            </button>
+        {{else}}
+        <a class="btn btn-sm btn-light mr-1 p-2" href="{{navigateUrl page=index}}">{{index}}</a>
+        {{/if}}
+    {{/pageButtons}}
+</div>
