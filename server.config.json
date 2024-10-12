@@ -15,7 +15,7 @@
         "500": "error"
     },
     "catalog": {
-        "400": "not_found",
+      "orm_repo":{
         "settings": {
             "dialect": "sqlite",
             "storage": "catalog.db"
@@ -24,4 +24,5 @@
         "reset_db": true,
         "seed_file": "products.json"
     }
+  }
 }
