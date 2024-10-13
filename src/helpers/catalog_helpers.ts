@@ -1,4 +1,4 @@
-import { HelperOptions } from "handlebars";
+import Handlebars, { HelperOptions } from "handlebars";
 import { stringify } from "querystring"; //Converts an object into a URL-encoded query string.
 import { escape } from "querystring"; // Escapes a string for use in a query string
 
@@ -46,4 +46,20 @@ export const categoryButtons = (options: HelperOptions) => {
         })
     }
     return output;
+}
+
+export const highlight = (value: string, options: HelperOptions) => {
+    const { searchTerm } = getData(options);
+    if (searchTerm && searchTerm !== "") {
+        const regexp = new RegExp(searchTerm, "ig");
+        const mod = value.replaceAll(regexp, "<strong>$&</strong>");
+        return new Handlebars.SafeString(mod);
+    }
+    return value;
+}
+
+const formatter = new Intl.NumberFormat("en-us", {style: "currency", currency: "USD"}) //Uses the Internationalization API (Intl) to format numbers as currency.
+
+export const currency  = (value: number) => {
+    return formatter.format(value);
 }
