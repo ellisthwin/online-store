@@ -21,12 +21,15 @@ export interface Supplier{
 
 }
 
-export interface ProductQueryParameters {
+export interface ProductQueryParameters { // pagination required
     pageSize?: number;
     page?: number;
+    category?: number;
+    searchTerm?: string;
 }
 
-export interface ProductQueryResult {
+export interface ProductQueryResult { // response the repository will produce
     products: Product[];
     totalCount: number;
+    categories:Category[];
 }
