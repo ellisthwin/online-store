@@ -11,6 +11,8 @@ export const createCatalogRoutes = (app: Express) =>
         const res = await catalog_repository.getProducts({page, pageSize, searchTerm, category});
         resp.render("index", {...res, page, pageSize, pageCount: Math.ceil(res.totalCount / (pageSize ?? 1)), searchTerm, category});
     });
+
+    
     // app.get("/", (req, resp) => {
     //     //resp.send("Hello, SportsStore Route");
     //     resp.render("index");
