@@ -49,5 +49,12 @@ export function AddQueries<TBase extends Constructor<BaseRepo>>(Base: TBase) {
                 raw: true, nest: true
             });
         }
+
+        getProductDetials(ids: number[]) {
+            return ProductModel.findAll({
+                where: { id: { [Op.in]: ids }}, 
+                raw: true, nest: true
+            });
+        }
     }
 }
