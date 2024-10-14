@@ -5,6 +5,8 @@ import { getConfig } from "./config";
 import { createRoutes } from "./routes";
 import { createTemplates } from "./helpers";
 import { createErrorHandlers } from "./errors";
+import { createSessions } from "./sessions";
+
 const port = getConfig("http:port", 8000)
 
 // const port = 8000;
@@ -19,6 +21,7 @@ expressApp.use(express.static("node_modules/bootstrap/dist")); //serve static fi
 //     resp.send("Hello, SportsStore");
 // })
 createTemplates(expressApp);
+createSessions(expressApp);
 createRoutes(expressApp);
 createErrorHandlers(expressApp);
 
