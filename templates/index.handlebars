@@ -6,7 +6,7 @@
     <div class="col">
         {{> search_controls}}
     {{#unless products}}<h4>No products</h4>{{/unless}}
-    {{#each products}}
+   {{#each products}}      {{!--  Iterates over the list of products. --}}
         {{> product this}}
     {{/each}}
     {{> page_controls }}
