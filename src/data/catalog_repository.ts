@@ -3,6 +3,7 @@ import { Category, Product, Supplier, ProductQueryParameters, ProductQueryResult
 export interface CatalogRepository {
     getProducts(params?: ProductQueryParameters): Promise<ProductQueryResult>;   // Retrieves a list of all products. A Promise that resolves to an array of Product objects.
     storeProduct(p: Product): Promise<Product>;
+    getProductDetials(ids: number[]): Promise<Product[]>;
     getCategories() : Promise<Category[]>;
     storeCategory(c: Category): Promise<Category>;
     getSuppliers(): Promise<Supplier[]>;
