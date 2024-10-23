@@ -5,5 +5,5 @@ export class CustomerModel extends Model<InferAttributes<CustomerModel>, InferCr
     declare id?: CreationOptional<number>;
     declare name: string;
     declare email: string;
-    declare dederatedId?: string;
+    declare federatedId?: string;
 }
